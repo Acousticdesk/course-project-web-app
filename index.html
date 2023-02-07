@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Real Estate Marker Forecast</title>
+</head>
+<body>
+    <form action="" name="form">
+        <fieldset>
+            <label for="residential_complex">Житловий Комплекс</label>
+            <select name="residential_complex" id="residential_complex"></select>
+        </fieldset>
+
+        <fieldset>
+            <label for="developer">Забудовник</label>
+            <select name="developer" id="developer"></select>
+        </fieldset>
+        <fieldset>
+            <label for="building_class">Клас Житла</label>
+            <select name="building_class" id="building_class"></select>
+        </fieldset>
+        <fieldset>
+            <label for="construction_technology">Технологія Будівництва</label>
+            <select name="construction_technology" id="construction_technology"></select>
+        </fieldset>
+        <fieldset>
+            <label for="wall">Стіни</label>
+            <select name="wall" id="wall"></select>
+        </fieldset>
+        <fieldset>
+            <label for="insulation">Утеплення</label>
+            <select name="insulation" id="insulation"></select>
+        </fieldset>
+        <fieldset>
+            <label for="heating">Опалення</label>
+            <select name="heating" id="heating"></select>
+        </fieldset>
+        <fieldset>
+            <label for="renovation_sate">Ремонт</label>
+            <select name="renovation_sate" id="renovation_sate"></select>
+        </fieldset>
+        <fieldset>
+            <label for="protected_area">Закрита Територія</label>
+            <select name="protected_area" id="protected_area"></select>
+        </fieldset>
+        <fieldset>
+            <label for="installment_plan">Розстрочка</label>
+            <select name="installment_plan" id="installment_plan"></select>
+        </fieldset>
+        <fieldset>
+            <label for="installment_plan_term">Термнін Розстрочки</label>
+            <select name="installment_plan_term" id="installment_plan_term"></select>
+        </fieldset>
+        <fieldset>
+            <label for="parking">Паркінг</label>
+            <select name="parking" id="parking"></select>
+        </fieldset>
+        <fieldset>
+            <label for="rooms">Кімнати</label>
+            <select name="rooms" id="rooms"></select>
+        </fieldset>
+        <fieldset>
+            <label for="area">Площа</label>
+            <input name="area" id="area" type="number" />
+        </fieldset>
+        <button type="submit">Розрахувати</button>
+    </form>
+    <div hidden id="price">
+        <h3>Ціна нерухомості: </h3>
+        <span></span>
+        гривень
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
