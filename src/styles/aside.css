@@ -1,0 +1,26 @@
+aside {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgb(69,79,218);
+    background: linear-gradient(180deg, rgba(69,79,218,1) 0%, rgba(41,46,131,1) 100%);
+}
+
+.aside__content {
+    text-align: center;
+}
+
+.aside__header {
+    margin: 32px 0 0 0;
+}
+
+.aside__button {
+    margin: 16px;
+}
+
+.aside__description {
+    margin: 16px 0 16px 0;
+    max-width: 500px;
+}

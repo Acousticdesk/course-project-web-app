@@ -1,0 +1,23 @@
+.button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-family: var(--app-font-face);
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button--primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.button--primary:hover {
+    background: var(--color-primary-darkened-20);
+}
+
+.button--primary:active {
+    background: var(--color-primary-darkened-40);
+}

@@ -1,14 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <title>Real Estate Marker Forecast</title>
-</head>
-<body>
-    <script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../src/styles/colors.css" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
+    <link rel="stylesheet" href="../src/styles/layout.css" />
+    <link rel="stylesheet" href="../src/styles/typography.css" />
+    <link rel="stylesheet" href="../src/styles/aside.css" />
+    <link rel="stylesheet" href="../src/styles/buttons.css" />
+    <link rel="stylesheet" href="../src/styles/pages/home-page.css" />
+    <title>Інтелектуальний контролер для розрохунку вартості нерухомості</title>
+  </head>
+  <body>
+    <main>
+      <aside>
+        <div class="aside__content">
+          <img
+            width="256"
+            src="../src/assets/images/statistics.png"
+            alt="statistics icon"
+          />
+          <h2 class="aside__header text--white">Інтелектуальний Контроллер</h2>
+          <h3 class="text--white">Для розрахунку вартості нерухомості</h3>
+          <p class="aside__description text--white">
+            Використовуючи технологію штучного інтелекту, рішення надає миттєву
+            оцінку власності
+          </p>
+          <button class="aside__button button button--primary">
+            Розрахувати
+          </button>
+        </div>
+      </aside>
+      <section class="content home-page"></section>
+    </main>
+
+    <script src="dist/bundle.js"></script>
+  </body>
 </html>
