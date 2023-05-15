@@ -70,6 +70,10 @@ export class DescriptionPageDomController {
         headers: {
           "Content-Type": "application/json",
         },
+      }).then((res) => {
+        if (!res.ok) {
+          throw new Error(`Error ${res.status}. ${res.statusText}`);
+        }
       });
     } catch (e) {
       ToastController.show({
