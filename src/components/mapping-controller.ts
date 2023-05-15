@@ -1,9 +1,8 @@
 export class MappingController {
   static predictedClassMapping: { [key: string]: string } = {
-    0: "Преміум",
-    1: "Бізнес",
-    2: "Комфорт",
-    3: "Економ",
+    3: "Преміум",
+    2: "Бізнес",
+    1: "Комфорт",
   };
 
   static mapPredictedClassToLabel(predictedClass: string) {
