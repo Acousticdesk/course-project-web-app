@@ -6,4 +6,5 @@ export interface CharacteristicsFormData {
   floor: string;
   crimeRateInDistrict: string;
   predictedClass: string;
+  district: string;
 }

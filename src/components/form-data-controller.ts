@@ -19,6 +19,7 @@ export class FormDataController {
     floor,
     crimeRateInDistrict,
     predictedClass,
+    district,
   }: CharacteristicsFormData) {
     return {
       area: Number(area),
@@ -28,6 +29,7 @@ export class FormDataController {
       floor: Number(floor),
       crimeRateInDistrict: Number(crimeRateInDistrict),
       predictedClass: Number(predictedClass),
+      district: district,
     };
   }
 }
