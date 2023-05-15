@@ -1,5 +1,5 @@
-import { HomePageDomController } from "./pages/home-page";
+import { ScenarioController } from "./components/scenario-controller";
 
 export function main() {
-  HomePageDomController.init();
+  ScenarioController.init();
 }

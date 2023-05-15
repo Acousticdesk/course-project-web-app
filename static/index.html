@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="../src/styles/typography.css" />
     <link rel="stylesheet" href="../src/styles/aside.css" />
     <link rel="stylesheet" href="../src/styles/buttons.css" />
+    <link rel="stylesheet" href="../src/styles/toasts.css" />
     <link rel="stylesheet" href="../src/styles/pages/home-page.css" />
+    <link rel="stylesheet" href="../src/styles/pages/description-page.css" />
     <title>Інтелектуальний контролер для розрохунку вартості нерухомості</title>
   </head>
   <body>
@@ -38,9 +40,60 @@
             Розрахувати
           </button>
         </div>
+        <div hidden id="description_page_aside" class="aside__content">
+          <img
+            src="../src/assets/images/magnifier-on-document.png"
+            alt="magnifier on document"
+          />
+          <h2 class="aside__header text--white">Інтелектуальний Контроллер</h2>
+          <h3 class="text--white">Для розрахунку вартості нерухомості</h3>
+          <p class="aside__description text--white">
+            На цьому кроці ми зберемо важливу інформацію про обʼєкт нерухомості.
+            <br />
+            <br />
+            Давайте розпочнемо
+          </p>
+          <button
+            id="description_page_confirm_button"
+            class="aside__button button button--primary"
+          >
+            Підтвердити
+          </button>
+        </div>
       </aside>
       <section id="home_page_section" class="content home-page"></section>
+      <section
+        hidden
+        id="description_page_section"
+        class="content description-page"
+      >
+        <div class="description-page__content">
+          <h2>Текстовий Опис Обʼєкту Нерухомості</h2>
+          <p class="description-page__description">
+            Будь-ласка, введіть текстовий опис обʼєкту нерухомості що Вас
+            зацікавала.
+          </p>
+          <p class="description-page__description">
+            Додайте деталі про інфраструктуру навколо обʼєкту, наявність
+            паркінгу, магазинів, метро, дитячих садочків, тощо. Для того щоб
+            сформувати текстовий опис обʼєкуту, рекомендуємо приїхати до обʼєкту
+            нерухомості із нотатником та записати найважливіші деталі.
+          </p>
+          <form id="description_form">
+            <textarea
+              id="description_input"
+              class="description-page__input"
+              name="description"
+            ></textarea>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <div hidden id="toast" class="toast">
+      <h4 class="toast__header"></h4>
+      <p class="toast__description"></p>
+    </div>
 
     <script src="../dist/bundle.js"></script>
   </body>

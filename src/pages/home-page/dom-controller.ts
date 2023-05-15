@@ -1,4 +1,6 @@
 export class HomePageDomController {
+  static events = new EventTarget();
+
   static getStartButton() {
     const button = document.querySelector("#home_page_start_button");
 
@@ -30,11 +32,7 @@ export class HomePageDomController {
   }
 
   static handleStartButtonClick() {
-    const homePageAside = HomePageDomController.getAside();
-    homePageAside.hidden = true;
-
-    const homePageSection = HomePageDomController.getSection();
-    homePageSection.hidden = true;
+    HomePageDomController.remove();
   }
 
   static init() {
@@ -44,14 +42,24 @@ export class HomePageDomController {
       "click",
       HomePageDomController.handleStartButtonClick
     );
+
+    return HomePageDomController.events;
   }
 
   static remove() {
+    const homePageAside = HomePageDomController.getAside();
+    homePageAside.hidden = true;
+
+    const homePageSection = HomePageDomController.getSection();
+    homePageSection.hidden = true;
+
     const startButton = HomePageDomController.getStartButton();
 
     startButton.removeEventListener(
       "click",
       HomePageDomController.handleStartButtonClick
     );
+
+    HomePageDomController.events.dispatchEvent(new Event("done"));
   }
 }

@@ -1,0 +1,23 @@
+.description-page:not([hidden]) {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-page__content {
+    max-width: 550px;
+}
+
+.description-page__description {
+    margin: 24px 0 0 0;
+}
+
+.description-page__input {
+    margin: 24px 0 0 0;
+    width: 100%;
+    display: block;
+    resize: none;
+    font-size: 16px;
+    height: 23px;
+}
