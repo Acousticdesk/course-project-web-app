@@ -1,6 +1,7 @@
 import { ApiRouteEnums } from "../../api/api.enums";
 import { ToastController } from "../../components/toast-controller";
 import { TextareaController } from "../../components/textarea-controller";
+import { StateController } from "../../components/state-controller";
 
 export class DescriptionPageDomController {
   static events = new EventTarget();
@@ -62,19 +63,26 @@ export class DescriptionPageDomController {
     }
 
     try {
-      await fetch(ApiRouteEnums.CLASS_PREDICTION_ENDPOINT as string, {
-        method: "POST",
-        body: JSON.stringify({
-          description: formData.get("description"),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => {
+      const { class: predictedClass } = await fetch(
+        ApiRouteEnums.CLASS_PREDICTION_ENDPOINT as string,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            description: formData.get("description"),
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => {
         if (!res.ok) {
           throw new Error(`Error ${res.status}. ${res.statusText}`);
         }
+
+        return res.json();
       });
+
+      StateController.setPredictedClass(predictedClass);
     } catch (e) {
       ToastController.show({
         header: "Class prediction error",
@@ -111,8 +119,6 @@ export class DescriptionPageDomController {
     );
 
     TextareaController.init("#description_input");
-
-    return DescriptionPageDomController.events;
   }
 
   static remove() {
@@ -124,5 +130,11 @@ export class DescriptionPageDomController {
     );
 
     TextareaController.remove("#description_input");
+  }
+
+  static awaitStepCompleted() {
+    return new Promise((resolve) => {
+      DescriptionPageDomController.events.addEventListener("done", resolve);
+    });
   }
 }

@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="../src/styles/toasts.css" />
     <link rel="stylesheet" href="../src/styles/pages/home-page.css" />
     <link rel="stylesheet" href="../src/styles/pages/description-page.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/pages/class-inspection-page.css"
+    />
     <title>Інтелектуальний контролер для розрохунку вартості нерухомості</title>
   </head>
   <body>
@@ -60,6 +64,18 @@
             Підтвердити
           </button>
         </div>
+        <div hidden id="class_inspection_page_aside" class="aside__content">
+          <img src="../src/assets/images/checkmark.png" alt="checkmark" />
+          <p class="aside__description text--white">
+            Вітаємо, ми розрахували клас Вашого обʼєкту нерухомості
+          </p>
+          <button
+            id="class_inspection_page_confirm_button"
+            class="aside__button button button--primary"
+          >
+            Продовжити
+          </button>
+        </div>
       </aside>
       <section id="home_page_section" class="content home-page"></section>
       <section
@@ -86,6 +102,15 @@
               name="description"
             ></textarea>
           </form>
+        </div>
+      </section>
+      <section
+        hidden
+        id="class_inspection_page_section"
+        class="content class-inspection-page"
+      >
+        <div class="class-inspection-page__content">
+          <h2 id="class_inspection_page_description"></h2>
         </div>
       </section>
     </main>
