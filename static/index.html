@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="../src/styles/pages/description-page.css" />
     <link
       rel="stylesheet"
+      href="../src/styles/pages/class-inspection-page.css"
+    />
+    <link
+      rel="stylesheet"
       href="../src/styles/pages/characteristics-page.css"
     />
     <link
       rel="stylesheet"
-      href="../src/styles/pages/class-inspection-page.css"
+      href="../src/styles/pages/price-inspection-page.css"
     />
     <title>Інтелектуальний контролер для розрохунку вартості нерухомості</title>
   </head>
@@ -94,6 +98,18 @@
             class="aside__button button button--primary"
           >
             Підтвердити
+          </button>
+        </div>
+        <div hidden id="price_inspection_page_aside" class="aside__content">
+          <img src="../src/assets/images/checkmark.png" alt="checkmark" />
+          <p class="aside__description text--white">
+            Вітаємо, ми розрахували ціну Вашого обʼєкту нерухомості
+          </p>
+          <button
+            id="price_inspection_page_confirm_button"
+            class="aside__button button button--primary"
+          >
+            Оцінити інший обʼєкт
           </button>
         </div>
       </aside>
@@ -195,6 +211,15 @@
               />
             </div>
           </form>
+        </div>
+      </section>
+      <section
+        hidden
+        id="price_inspection_page_section"
+        class="content price-inspection-page"
+      >
+        <div class="price-inspection-page__content">
+          <h2 id="price_inspection_page_description"></h2>
         </div>
       </section>
     </main>

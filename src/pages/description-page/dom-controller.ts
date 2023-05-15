@@ -105,6 +105,10 @@ export class DescriptionPageDomController {
   }
 
   static init() {
+    const form = DescriptionPageDomController.getForm();
+
+    form.reset();
+
     const descriptionPageAside = DescriptionPageDomController.getAside();
     descriptionPageAside.hidden = false;
 

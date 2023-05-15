@@ -45,7 +45,7 @@ export class CharacteristicsDomController {
     return characteristicsSection as HTMLElement;
   }
 
-  static async handleConfirmButtonClick() {
+  static getForm() {
     const form = document.querySelector(
       "#characteristics_form"
     ) as HTMLFormElement;
@@ -53,6 +53,12 @@ export class CharacteristicsDomController {
     if (!form) {
       throw new Error("Form was not found in the DOM");
     }
+
+    return form;
+  }
+
+  static async handleConfirmButtonClick() {
+    const form = CharacteristicsDomController.getForm();
 
     const select = CharacteristicsDomController.getPredictedClassInput();
 
@@ -127,6 +133,10 @@ export class CharacteristicsDomController {
   }
 
   static init() {
+    const form = CharacteristicsDomController.getForm();
+
+    form.reset();
+
     const characteristicsPageAside = CharacteristicsDomController.getAside();
     characteristicsPageAside.hidden = false;
 
