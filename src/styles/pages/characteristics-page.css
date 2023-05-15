@@ -1,0 +1,29 @@
+.characteristics-page:not([hidden]) {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.characteristics-page__header {
+    margin: 0 0 96px 0;
+}
+
+.characteristics__form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.characteristics__form-section {
+    width: 33.3%;
+    padding: 0 16px 16px;
+    flex: 0 1 auto;
+}
+
+.characteristics__form-section input,
+.characteristics__form-section select
+{
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+}

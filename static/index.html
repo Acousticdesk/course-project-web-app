@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="../src/styles/pages/description-page.css" />
     <link
       rel="stylesheet"
+      href="../src/styles/pages/characteristics-page.css"
+    />
+    <link
+      rel="stylesheet"
       href="../src/styles/pages/class-inspection-page.css"
     />
     <title>Інтелектуальний контролер для розрохунку вартості нерухомості</title>
@@ -76,6 +80,22 @@
             Продовжити
           </button>
         </div>
+        <div hidden id="characteristics_page_aside" class="aside__content">
+          <img src="../src/assets/images/preferences.png" alt="preferences" />
+          <p class="aside__description text--white">
+            На цьому кроці ми продовжимо зберати важливу інформацію про обʼєкт
+            нерухомості.
+            <br />
+            <br />
+            Давайте розпочнемо
+          </p>
+          <button
+            id="characteristics_page_confirm_button"
+            class="aside__button button button--primary"
+          >
+            Підтвердити
+          </button>
+        </div>
       </aside>
       <section id="home_page_section" class="content home-page"></section>
       <section
@@ -111,6 +131,70 @@
       >
         <div class="class-inspection-page__content">
           <h2 id="class_inspection_page_description"></h2>
+        </div>
+      </section>
+      <section
+        hidden
+        id="characteristics_page_section"
+        class="content characteristics-page"
+      >
+        <div class="characteristics-page__content">
+          <h2 class="characteristics-page__header">
+            Характеристики Обʼєкту Нерухомості
+          </h2>
+          <form id="characteristics_form" class="characteristics__form">
+            <div class="characteristics__form-section">
+              <select
+                name="predictedClass"
+                id="characteristics_predicted_class_input"
+              >
+                <option value="0">Преміум</option>
+                <option value="1">Бізнес</option>
+                <option value="2">Комфорт</option>
+                <option value="3">Економ</option>
+              </select>
+            </div>
+            <div class="characteristics__form-section">
+              <input
+                name="area"
+                placeholder="Площа, м^2"
+                type="number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="characteristics__form-section">
+              <input
+                name="rooms"
+                placeholder="К-сть кімнат"
+                type="number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="characteristics__form-section">
+              <input
+                name="ceilingHeight"
+                placeholder="Висота стелі, м"
+                type="number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="characteristics__form-section">
+              <input
+                name="numApartmentsTotal"
+                placeholder="К-сть квартир в ЖК"
+                type="number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="characteristics__form-section">
+              <input
+                name="floor"
+                placeholder="Поверх"
+                type="number"
+                autocomplete="off"
+              />
+            </div>
+          </form>
         </div>
       </section>
     </main>
