@@ -4,4 +4,5 @@ export enum ApiEnums {
 
 export enum ApiRouteEnums {
   CLASS_PREDICTION_ENDPOINT = `${ApiEnums.BASE_URL}/class-prediction`,
+  PRICE_PREDICTION_ENDPOINT = `${ApiEnums.BASE_URL}/price-prediction`,
 }
