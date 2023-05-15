@@ -19,7 +19,7 @@
   <body>
     <main>
       <aside>
-        <div class="aside__content">
+        <div id="home_page_aside" class="aside__content">
           <img
             width="256"
             src="../src/assets/images/statistics.png"
@@ -31,14 +31,17 @@
             Використовуючи технологію штучного інтелекту, рішення надає миттєву
             оцінку власності
           </p>
-          <button class="aside__button button button--primary">
+          <button
+            id="home_page_start_button"
+            class="aside__button button button--primary"
+          >
             Розрахувати
           </button>
         </div>
       </aside>
-      <section class="content home-page"></section>
+      <section id="home_page_section" class="content home-page"></section>
     </main>
 
-    <script src="dist/bundle.js"></script>
+    <script src="../dist/bundle.js"></script>
   </body>
 </html>
