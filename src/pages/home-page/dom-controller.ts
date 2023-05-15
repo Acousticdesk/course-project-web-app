@@ -42,8 +42,6 @@ export class HomePageDomController {
       "click",
       HomePageDomController.handleStartButtonClick
     );
-
-    return HomePageDomController.events;
   }
 
   static remove() {
@@ -61,5 +59,11 @@ export class HomePageDomController {
     );
 
     HomePageDomController.events.dispatchEvent(new Event("done"));
+  }
+
+  static awaitStepCompleted() {
+    return new Promise((resolve) => {
+      HomePageDomController.events.addEventListener("done", resolve);
+    });
   }
 }
