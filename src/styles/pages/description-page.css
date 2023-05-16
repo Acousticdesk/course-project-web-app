@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 }
 
 .description-page__content {
@@ -19,5 +20,5 @@
     display: block;
     resize: none;
     font-size: 16px;
-    height: 23px;
+    height: 100px;
 }

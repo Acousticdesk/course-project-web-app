@@ -1,8 +1,15 @@
 export class TextareaController {
+  static MIN_HEIGHT = 100;
+
   static handleTextareaInput(e: Event) {
     const textarea = e.target as HTMLTextAreaElement;
     textarea.style.height = "1px";
-    textarea.style.height = `${textarea.scrollHeight}px`;
+
+    if (textarea.scrollHeight < TextareaController.MIN_HEIGHT) {
+      textarea.style.height = `${TextareaController.MIN_HEIGHT}px`;
+    } else {
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
   }
 
   static init(selector: string) {
