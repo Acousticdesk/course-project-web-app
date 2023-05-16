@@ -14,22 +14,18 @@ export class FormDataController {
   static preparePricePredictionPayload({
     area,
     rooms,
-    ceilingHeight,
-    numApartmentsTotal,
-    floor,
     crimeRateInDistrict,
     predictedClass,
     district,
+    address,
   }: CharacteristicsFormData) {
     return {
       area: Number(area),
       rooms: Number(rooms),
-      ceilingHeight: Number(ceilingHeight),
-      numApartmentsTotal: Number(numApartmentsTotal),
-      floor: Number(floor),
       crimeRateInDistrict: Number(crimeRateInDistrict),
       predictedClass: Number(predictedClass),
-      district: district,
+      district,
+      address,
     };
   }
 }
