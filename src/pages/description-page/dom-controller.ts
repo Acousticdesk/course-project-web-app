@@ -2,6 +2,7 @@ import { ApiRouteEnums } from "../../api/api.enums";
 import { ToastController } from "../../components/toast-controller";
 import { TextareaController } from "../../components/textarea-controller";
 import { StateController } from "../../components/state-controller";
+import { TooManyRequestsError } from "../../api/errors";
 
 export class DescriptionPageDomController {
   static events = new EventTarget();
@@ -76,7 +77,13 @@ export class DescriptionPageDomController {
         }
       ).then((res) => {
         if (!res.ok) {
-          throw new Error(`Error ${res.status}. ${res.statusText}`);
+          const errorMessage = `Error ${res.status}. ${res.statusText}`;
+          switch (res.status) {
+            case 429:
+              throw new TooManyRequestsError(errorMessage);
+            default:
+              throw new Error(errorMessage);
+          }
         }
 
         return res.json();
@@ -84,10 +91,19 @@ export class DescriptionPageDomController {
 
       StateController.setPredictedClass(predictedClass);
     } catch (e) {
+      let description = "";
+
+      if (e instanceof TooManyRequestsError) {
+        description =
+          "Забагато запитів з вашої IP адреси, спробуйте знову через хвилину";
+      } else {
+        description =
+          e && typeof e === "object" ? e.toString() : "Невідома помилка";
+      }
+
       ToastController.show({
-        header: "Class prediction error",
-        description:
-          e && typeof e === "object" ? e.toString() : "Unrecognized error",
+        header: "Помилка при обрахуванні класу житла",
+        description,
       });
 
       return;

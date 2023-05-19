@@ -1,5 +1,5 @@
 export enum ApiEnums {
-  BASE_URL = "http://ec2-18-188-41-122.us-east-2.compute.amazonaws.com",
+  BASE_URL = "http://ec2-13-59-218-102.us-east-2.compute.amazonaws.com",
 }
 
 export enum ApiRouteEnums {

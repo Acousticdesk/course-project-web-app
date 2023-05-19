@@ -3,6 +3,7 @@ import { ApiRouteEnums } from "../../api/api.enums";
 import { ToastController } from "../../components/toast-controller";
 import { StateController } from "../../components/state-controller";
 import { CharacteristicsFormData } from "../../components/characteristics/interfaces";
+import { TooManyRequestsError } from "../../api/errors";
 
 export class CharacteristicsDomController {
   static events = new EventTarget();
@@ -91,10 +92,19 @@ export class CharacteristicsDomController {
 
       StateController.setPredictedPrice(predictedPrice);
     } catch (e) {
+      let description = "";
+
+      if (e instanceof TooManyRequestsError) {
+        description =
+          "Забагато запитів з вашої IP адреси, спробуйте знову через хвилину";
+      } else {
+        description =
+          e && typeof e === "object" ? e.toString() : "Невідома помилка";
+      }
+
       ToastController.show({
-        header: "Price prediction error",
-        description:
-          e && typeof e === "object" ? e.toString() : "Unrecognized error",
+        header: "Помилка при обрахуванні вартості нерухомості",
+        description,
       });
 
       return;
