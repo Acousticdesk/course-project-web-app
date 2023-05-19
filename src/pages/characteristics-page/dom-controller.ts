@@ -84,7 +84,13 @@ export class CharacteristicsDomController {
         }
       ).then((res) => {
         if (!res.ok) {
-          throw new Error(`Error ${res.status}. ${res.statusText}`);
+          const errorMessage = `Error ${res.status}. ${res.statusText}`;
+          switch (res.status) {
+            case 429:
+              throw new TooManyRequestsError(errorMessage);
+            default:
+              throw new Error(errorMessage);
+          }
         }
 
         return res.json();
